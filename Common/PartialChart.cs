@@ -612,7 +612,22 @@ namespace Visifire.Charts
             typeof(Boolean),
             typeof(Chart),
             new PropertyMetadata(OnView3DPropertyChanged));
-
+        /// <summary>
+        /// X轴3D效果前部颜色
+        /// </summary>
+        public Brush HorizontalFrontBrush3D { get; set; }
+        /// <summary>
+        /// X轴3D效果顶部颜色
+        /// </summary>
+        public Brush HorizontalTopBrush3D { get; set; }
+        /// <summary>
+        /// X轴3D效果右侧颜色
+        /// </summary>
+        public Brush HorizontalRightBrush3D { get; set; }
+        /// <summary>
+        /// Y轴3D效果颜色
+        /// </summary>
+        public Brush VerticalRightBrush3D { get; set; }
         /// <summary>
         /// Identifies the Visifire.Charts.Chart.HrefTarget dependency property.
         /// </summary>
