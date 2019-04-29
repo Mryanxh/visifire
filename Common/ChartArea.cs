@@ -3443,7 +3443,18 @@ namespace Visifire.Charts
 
             Brush frontBrush, topBrush, rightBrush;
             ExtendedGraphics.GetBrushesForPlank(Chart, out frontBrush, out topBrush, out rightBrush, false);
-
+            if (null != Chart.HorizontalFrontBrush3D && Brushes.Transparent != Chart.HorizontalFrontBrush3D)
+            {
+                frontBrush = Chart.HorizontalFrontBrush3D;
+            }
+            if (null != Chart.HorizontalRightBrush3D && Brushes.Transparent != Chart.HorizontalRightBrush3D)
+            {
+                rightBrush = Chart.HorizontalRightBrush3D;
+            }
+            if (null != Chart.HorizontalTopBrush3D && Brushes.Transparent != Chart.HorizontalTopBrush3D)
+            {
+                topBrush = Chart.HorizontalTopBrush3D;
+            }
             _horizontalPlank = ColumnChart.Get3DPlank(ScrollableLength - plankDepth, plankThickness, plankDepth, frontBrush, topBrush, rightBrush);
 
             Panel plank = _horizontalPlank.Visual as Panel;
@@ -3505,7 +3516,18 @@ namespace Visifire.Charts
             colors.Add(Color.FromArgb(255, 142, 135, 135));  // #FF8E8787
 
             topBrush = Graphics.CreateLinearGradientBrush(0, new Point(0.084, 0.441), new Point(1.916, 0.443), colors, new List<double>() { 0, 1 });
-
+            if (null != Chart.HorizontalFrontBrush3D && Brushes.Transparent != Chart.HorizontalFrontBrush3D)
+            {
+                frontBrush = Chart.HorizontalFrontBrush3D;
+            }
+            if (null != Chart.HorizontalRightBrush3D && Brushes.Transparent != Chart.HorizontalRightBrush3D)
+            {
+                rightBrush = Chart.HorizontalRightBrush3D;
+            }
+            if (null != Chart.HorizontalTopBrush3D && Brushes.Transparent != Chart.HorizontalTopBrush3D)
+            {
+                topBrush = Chart.HorizontalTopBrush3D;
+            }
             _verticalPlank = ColumnChart.Get3DPlank(plankThickness, ScrollableLength - plankDepth, plankDepth, frontBrush, topBrush, rightBrush);
             Panel plank = _verticalPlank.Visual as Panel;
 
@@ -3545,7 +3567,10 @@ namespace Visifire.Charts
             colors.Add(Color.FromArgb(255, 200, 200, 200));
 
             Brush rightBrush = Graphics.CreateLinearGradientBrush(0, new Point(0, 0.5), new Point(1, 0.5), colors, new List<double>() { 0, 1 });
-
+            if (null != Chart.VerticalRightBrush3D && Brushes.Transparent != Chart.VerticalRightBrush3D)
+            {
+                rightBrush = Chart.VerticalRightBrush3D;
+            }
             _verticalPlank = ColumnChart.Get3DPlank(plankThickness, height, plankDepth, null, null, rightBrush);
             Panel plank = _verticalPlank.Visual as Panel;
 
